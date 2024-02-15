@@ -1,3 +1,25 @@
+
+# novo_teste_estagio
+
+Este é um projeto desenvolvido como parte de um teste de estágio.
+
+## Como Utilizar
+
+Para utilizar este aplicativo, você precisará de um emulador ou de um dispositivo físico conectado via depuração USB.
+
+### Pré-requisitos
+
+- Flutter SDK instalado e configurado
+- Emulador Android ou iOS configurado ou um dispositivo físico conectado via depuração USB
+
+### Passos para Execução
+
+1. Clone este repositório para o seu ambiente local.
+2. Abra o projeto em seu editor de código preferido.
+3. Abra um terminal na pasta do projeto.
+4. Certifique-se de que seu emulador ou dispositivo físico está pronto para ser utilizado.
+
+
 Instruções de Utilização do Aplicativo ALADDIN
 Este documento fornece orientações sobre como utilizar o aplicativo ALADDIN para calcular o preço de tapetes em diferentes formas geométricas. O aplicativo possui as seguintes telas:
 
