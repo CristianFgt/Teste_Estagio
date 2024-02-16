@@ -14,7 +14,7 @@ class MenuScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height * 0.1), // Espaço vazio no topo
+            SizedBox(height: MediaQuery.of(context).size.height * 0.1), // Espaço vazio no topo tela
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
