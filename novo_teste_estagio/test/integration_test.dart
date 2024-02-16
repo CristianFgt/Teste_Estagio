@@ -7,7 +7,7 @@ import 'package:teste_estagio/screens/rectangle_screen.dart';
 
 void main() {
   testWidgets('Integration Test: Navigation from MenuScreen', (WidgetTester tester) async {
-    await tester.pumpWidget(MaterialApp(home: MenuScreen()));
+    await tester.pumpWidget(const MaterialApp(home: MenuScreen()));
 
     // Verifica se o título "ALADDIN" está presente
     expect(find.text('ALADDIN'), findsOneWidget);

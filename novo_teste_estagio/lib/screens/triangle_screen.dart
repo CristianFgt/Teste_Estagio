@@ -4,6 +4,8 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TriangleScreen extends StatefulWidget {
+  const TriangleScreen({super.key});
+
   @override
   _TriangleScreenState createState() => _TriangleScreenState();
 }
@@ -17,7 +19,7 @@ class _TriangleScreenState extends State<TriangleScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tapete Triangular'),
+        title: const Text('Tapete Triangular'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -26,10 +28,10 @@ class _TriangleScreenState extends State<TriangleScreen> {
           children: [
             Text(
               'Preço por m²: R\$ ${pricePerSquareMeter.toStringAsFixed(2)}',
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
-            SizedBox(height: 20),
-            Text('Insira o comprimento de uma das laterais do tapete triangular em metros:'),
+            const SizedBox(height: 20),
+            const Text('Insira o comprimento de uma das laterais do tapete triangular em metros:'),
             TextField(
               keyboardType: TextInputType.number,
               onChanged: (value) {
@@ -39,7 +41,7 @@ class _TriangleScreenState extends State<TriangleScreen> {
                 });
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () async {
                 // Chamar função para calcular área e preço
@@ -48,9 +50,9 @@ class _TriangleScreenState extends State<TriangleScreen> {
                   isPriceCalculated = true; // Marcar que o preço foi calculado
                 });
               },
-              child: Text('Calcular'),
+              child: const Text('Calcular'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             if (isPriceCalculated) // Mostrar o resultado apenas se o preço foi calculado
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,13 +61,13 @@ class _TriangleScreenState extends State<TriangleScreen> {
                   Text('Valor Final: R\$ ${calculatePrice().toStringAsFixed(2)}'),
                 ],
               ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Reiniciar o orçamento
                 resetValues();
               },
-              child: Text('Reiniciar'),
+              child: const Text('Reiniciar'),
             ),
           ],
         ),

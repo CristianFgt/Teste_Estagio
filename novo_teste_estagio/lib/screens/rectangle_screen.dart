@@ -4,6 +4,8 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class RectangleScreen extends StatefulWidget {
+  const RectangleScreen({super.key});
+
   @override
   _RectangleScreenState createState() => _RectangleScreenState();
 }
@@ -18,7 +20,7 @@ class _RectangleScreenState extends State<RectangleScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tapete Retangular'),
+        title: const Text('Tapete Retangular'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -27,10 +29,10 @@ class _RectangleScreenState extends State<RectangleScreen> {
           children: [
             Text(
               'Preço por m²: R\$ ${pricePerSquareMeter.toStringAsFixed(2)}',
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
-            SizedBox(height: 20),
-            Text('Insira a largura do tapete em metros:'),
+            const SizedBox(height: 20),
+            const Text('Insira a largura do tapete em metros:'),
             TextField(
               keyboardType: TextInputType.number,
               onChanged: (value) {
@@ -40,8 +42,8 @@ class _RectangleScreenState extends State<RectangleScreen> {
                 });
               },
             ),
-            SizedBox(height: 20),
-            Text('Insira o comprimento do tapete em metros:'),
+            const SizedBox(height: 20),
+            const Text('Insira o comprimento do tapete em metros:'),
             TextField(
               keyboardType: TextInputType.number,
               onChanged: (value) {
@@ -51,7 +53,7 @@ class _RectangleScreenState extends State<RectangleScreen> {
                 });
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () async {
                 // Chamar função para calcular área e preço
@@ -60,9 +62,9 @@ class _RectangleScreenState extends State<RectangleScreen> {
                   isPriceCalculated = true; // Marcar que o preço foi calculado
                 });
               },
-              child: Text('Calcular'),
+              child: const Text('Calcular'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             if (isPriceCalculated) // Mostrar o resultado apenas se o preço foi calculado
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,13 +73,13 @@ class _RectangleScreenState extends State<RectangleScreen> {
                   Text('Valor Final: R\$ ${calculatePrice().toStringAsFixed(2)}'),
                 ],
               ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Reiniciar o orçamento
                 resetValues();
               },
-              child: Text('Reiniciar'),
+              child: const Text('Reiniciar'),
             ),
           ],
         ),

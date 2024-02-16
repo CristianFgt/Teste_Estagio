@@ -4,10 +4,12 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,19 +17,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MenuScreen(),
+      home: const MenuScreen(),
     );
   }
 }
 
 class MenuScreen extends StatelessWidget {
-  const MenuScreen({Key? key}) : super(key: key);
+  const MenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Aladdin Tapetes'),
+        title: const Text('Aladdin Tapetes'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -54,7 +56,7 @@ class MenuScreen extends StatelessWidget {
                   );
                 } else {
                   // Se não houver dados armazenados localmente, exibir uma mensagem de erro
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text('Falha ao buscar dados. Verifique sua conexão com a internet.'),
                   ));
                 }
@@ -70,13 +72,13 @@ class MenuScreen extends StatelessWidget {
                 );
               } else {
                 // Se não houver dados armazenados localmente, exibir uma mensagem de erro
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text('Sem conexão com a internet. Não há dados armazenados localmente.'),
                 ));
               }
             }
           },
-          child: Text('Abrir Tela de Dados'),
+          child: const Text('Abrir Tela de Dados'),
         ),
       ),
     );
@@ -86,13 +88,13 @@ class MenuScreen extends StatelessWidget {
 class DataScreen extends StatelessWidget {
   final dynamic data;
 
-  const DataScreen({Key? key, required this.data}) : super(key: key);
+  const DataScreen({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dados'),
+        title: const Text('Dados'),
       ),
       body: Center(
         child: Text('Dados: $data'),

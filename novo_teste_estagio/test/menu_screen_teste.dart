@@ -9,7 +9,7 @@ void main() {
   group('MenuScreen', () {
     test('retrieveDataLocally returns cached data if available', () async {
       final sharedPreferences = MockSharedPreferences();
-      final menuScreen = MenuScreen();
+      const menuScreen = MenuScreen();
 
       // Mockando o comportamento de SharedPreferences
       when(sharedPreferences.getString('cached_screen_type')).thenReturn('cached_data');
@@ -26,7 +26,7 @@ void main() {
 
     test('retrieveDataLocally returns empty string if no cached data available', () async {
       final sharedPreferences = MockSharedPreferences();
-      final menuScreen = MenuScreen();
+      const menuScreen = MenuScreen();
 
       // Mockando o comportamento de SharedPreferences
       when(sharedPreferences.getString('cached_screen_type')).thenReturn(null);

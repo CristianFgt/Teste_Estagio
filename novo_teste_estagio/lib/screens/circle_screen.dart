@@ -4,6 +4,8 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CircleScreen extends StatefulWidget {
+  const CircleScreen({super.key});
+
   @override
   _CircleScreenState createState() => _CircleScreenState();
 }
@@ -17,7 +19,7 @@ class _CircleScreenState extends State<CircleScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tapete Redondo'),
+        title: const Text('Tapete Redondo'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -26,10 +28,10 @@ class _CircleScreenState extends State<CircleScreen> {
           children: [
             Text(
               'Preço por m²: R\$ ${pricePerSquareMeter.toStringAsFixed(2)}',
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
-            SizedBox(height: 20),
-            Text('Insira o raio do tapete em metros:'),
+            const SizedBox(height: 20),
+            const Text('Insira o raio do tapete em metros:'),
             TextField(
               keyboardType: TextInputType.number,
               onChanged: (value) {
@@ -39,7 +41,7 @@ class _CircleScreenState extends State<CircleScreen> {
                 });
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () async {
                 await calculateAreaAndPrice();
@@ -47,9 +49,9 @@ class _CircleScreenState extends State<CircleScreen> {
                   isPriceCalculated = true; // Marcar que o preço foi calculado
                 });
               },
-              child: Text('Calcular'),
+              child: const Text('Calcular'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             if (isPriceCalculated)
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,12 +60,12 @@ class _CircleScreenState extends State<CircleScreen> {
                   Text('Valor Final: R\$ ${calculatePrice().toStringAsFixed(2)}'),
                 ],
               ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 resetValues();
               },
-              child: Text('Reiniciar'),
+              child: const Text('Reiniciar'),
             ),
           ],
         ),

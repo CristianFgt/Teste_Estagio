@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 class MenuScreen extends StatelessWidget {
-  const MenuScreen({Key? key}) : super(key: key);
+  const MenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,58 +23,58 @@ class MenuScreen extends StatelessWidget {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(bottom: 62),
-                        child: Text(
+                        child: const Text(
                           'ALADDIN',
                           textAlign: TextAlign.center,
                           style: TextStyle(fontSize: 90),
                         ),
                       ),
-                      Text(
+                      const Text(
                         'Escolha o formato do seu tapete',
                         style: TextStyle(fontSize: 26),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                     ],
                   ),
                   ElevatedButton(
                     onPressed: () async {
-                      await navigateToScreen(context, CircleScreen(), 'circle');
+                      await navigateToScreen(context, const CircleScreen(), 'circle');
                     },
-                    child: Text(
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.fromLTRB(75, 20, 75, 20),
+                    ),
+                    child: const Text(
                       'Círculo',
                       style: TextStyle(fontSize: 50),
                       textAlign: TextAlign.center,
                     ),
-                    style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.fromLTRB(75, 20, 75, 20),
-                    ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () async {
-                      await navigateToScreen(context, TriangleScreen(), 'triangle');
+                      await navigateToScreen(context, const TriangleScreen(), 'triangle');
                     },
-                    child: Text(
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.fromLTRB(49, 20, 49, 20),
+                    ),
+                    child: const Text(
                       'Triângulo',
                       style: TextStyle(fontSize: 50),
                       textAlign: TextAlign.center,
                     ),
-                    style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.fromLTRB(49, 20, 49, 20),
-                    ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () async {
-                      await navigateToScreen(context, RectangleScreen(), 'rectangle');
+                      await navigateToScreen(context, const RectangleScreen(), 'rectangle');
                     },
-                    child: Text(
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
+                    ),
+                    child: const Text(
                       'Retângulo',
                       style: TextStyle(fontSize: 50),
                       textAlign: TextAlign.center,
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.fromLTRB(40, 20, 40, 20),
                     ),
                   ),
                 ],
@@ -91,19 +91,19 @@ class MenuScreen extends StatelessWidget {
       case 'circle':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => CircleScreen()),
+          MaterialPageRoute(builder: (context) => const CircleScreen()),
         );
         break;
       case 'rectangle':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => RectangleScreen()),
+          MaterialPageRoute(builder: (context) => const RectangleScreen()),
         );
         break;
       case 'triangle':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => TriangleScreen()),
+          MaterialPageRoute(builder: (context) => const TriangleScreen()),
         );
         break;
     }
