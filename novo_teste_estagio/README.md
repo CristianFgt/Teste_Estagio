@@ -10,7 +10,7 @@ Flutter SDK instalado e configurado
 Emulador Android ou iOS configurado ou um dispositivo físico conectado via depuração USB
 Neste repositório, você encontrará o arquivo APK para Android para testar o aplicativo. Para instalar o aplicativo em um dispositivo Android, siga estas etapas:
 
-Baixe o arquivo APK em "novo_teste_estagio\build\app\outputs\flutter-apk\app-x86_64-release.apk"
+Baixe o arquivo APK em "novo_teste_estagio\APK"
 No seu dispositivo Android, vá para Configurações > Segurança.
 Habilite a opção "Fontes desconhecidas" para permitir a instalação de aplicativos de fontes externas.
 Abra o arquivo APK baixado.
